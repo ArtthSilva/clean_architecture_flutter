@@ -5,8 +5,8 @@ class GetArtistForNameImp implements GetArtistForName{
   @override
   ArtistEntity call(String name) {
     if (name.contains('michelangelo')) {
-      return ArtistEntity(name: 'michelangelo', age: 99, nationality: 'italian', numberOfPaintings: 999);
+      return ArtistEntity(name: 'michelangelo', age: 99, nationality: 'italian', averageValueOfPaintings: 150);
     }
- return ArtistEntity(name: 'arthur', age: 19, nationality: 'br', numberOfPaintings: 999);
+ return ArtistEntity(name: 'arthur', age: 19, nationality: 'br', averageValueOfPaintings: 100);
   }
 }

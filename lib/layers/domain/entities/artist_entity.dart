@@ -2,15 +2,15 @@ class ArtistEntity {
   final String name;
   final int age;
   final String nationality;
-  final int numberOfPaintings;
+  final int averageValueOfPaintings;
   ArtistEntity({
     required this.name,
     required this.age,
     required this.nationality,
-    required this.numberOfPaintings
+    required this.averageValueOfPaintings
   });
   
   double get valueOfPaintings{
-    return numberOfPaintings * 1000;
+    return averageValueOfPaintings * 2;
   }
 }
