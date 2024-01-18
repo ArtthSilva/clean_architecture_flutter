@@ -17,7 +17,7 @@ class ArtistDTO extends ArtistEntity {
             nationality: artistNationality,
             averageValueOfPaintings: averageOfPaintings);
 
-  Map toMap() {
+   Map toMap() {
     return {
       'artistName': artistName,
       'artistAge': artistAge,
@@ -26,7 +26,7 @@ class ArtistDTO extends ArtistEntity {
     };
   }
 
-  ArtistDTO fromMap(Map map) {
+ static ArtistDTO fromMap(Map map) {
     return ArtistDTO(
       artistName: map['artistName'],
       artistAge: map['artistAge'],
