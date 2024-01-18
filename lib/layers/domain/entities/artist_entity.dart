@@ -10,7 +10,7 @@ class ArtistEntity {
     required this.averageValueOfPaintings
   });
   
-  double get valueOfPaintings{
+  int get valueOfPaintings{
     return averageValueOfPaintings * 2;
   }
 }
