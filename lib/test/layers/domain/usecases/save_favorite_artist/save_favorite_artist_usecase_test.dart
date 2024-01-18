@@ -1,15 +1,10 @@
+import 'package:clean_architecture/layers/data/repositories/save_favorite_artist_repository_imp.dart';
 import 'package:clean_architecture/layers/domain/entities/artist_entity.dart';
-import 'package:clean_architecture/layers/domain/repositories/save_favorite_artist_repository.dart';
 import 'package:clean_architecture/layers/domain/usecases/save_favorite_artist/save_favorite_artist_usecase.dart';
 import 'package:clean_architecture/layers/domain/usecases/save_favorite_artist/save_favorite_artist_usecase_imp.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-class SaveFavoriteArtistRepositoryImp implements SaveFavoriteArtistRepository {
-  @override
-  Future<bool> call(ArtistEntity artist) async {
-    return artist.averageValueOfPaintings > 0;
-  }
-}
+
 
 void main() {
   test('save the artist successfully', () async{
