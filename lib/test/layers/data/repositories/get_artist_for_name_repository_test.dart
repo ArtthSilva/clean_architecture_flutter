@@ -1,18 +1,23 @@
+import 'package:clean_architecture/layers/data/datasources/get_artist_for_name_datasource.dart';
+import 'package:clean_architecture/layers/data/datasources/local/get_artist_for_name_local_datasource_imp.dart';
 import 'package:clean_architecture/layers/data/repositories/get_artist_for_name_repository_imp.dart';
 import 'package:clean_architecture/layers/domain/repositories/get_artist_for_name_repository.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  test('nao deve retornar nulo', () {
-    GetArtistForNameRepository getArtistForNameRepository = GetArtistForNameRepositoryImp();
-    var test = getArtistForNameRepository('michelangelo');
+  GetArtistForNameDataSource dataSource = GetArtistForNameLocalDataSourceImp();
+    GetArtistForNameRepository repository = GetArtistForNameRepositoryImp(
+      getArtistForNameDataSource: dataSource,
+    );
 
-  expect(test, isNotNull);
+  test('should not return null', () {
+    var test = repository('michelangelo');
+
+    expect(test, isNotNull);
   });
-  test('deve retornar "michelangelo"', () {
-    GetArtistForNameRepository getArtistForNameRepository = GetArtistForNameRepositoryImp();
-    var test = getArtistForNameRepository('michelangelo');
+  test('should return "michelangelo"', () {
+    var test = repository('michelangelo');
 
-  expect(test.name, "michelangelo");
+    expect(test.name, "michelangelo");
   });
 }
